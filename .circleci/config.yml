@@ -13,14 +13,14 @@ jobs:
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
      - run: |
-         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+         echo "$DOCKER_PASS" | docker login --username gurprit123 --password-stdin
          docker run -d --name db company/proprietary-db:1.2.3
 
      # build the application image
      - run: docker build -t gurprit123/pythonci:v1 .
 
      # deploy the image
-     - run: docker push gurprit-123/pythonci:v1
+     - run: docker push gurprit123/pythonci:v1
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
