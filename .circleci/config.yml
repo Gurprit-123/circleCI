@@ -14,10 +14,11 @@ jobs:
      # with credentials stored in the UI
      - run: |
          echo "$DOCKER_PASS" | docker login -u $DOCKER_USER --password-stdin
-         docker run -d --name pydemo cimg/python:3.10
+         
 
      # build the application image
-     - run: docker build -t gurprit123/pythonci:v1 .
+     - run: docker build -t gurprit123/pythonci:v1 -f ./Dockerfile
+     #- run: docker run -d --name pydemo gurprit123/pythonci:v1
 
      # deploy the image
      - run: docker push gurprit123/pythonci:v1
