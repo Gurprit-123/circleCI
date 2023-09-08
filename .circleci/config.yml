@@ -7,14 +7,14 @@ version: 2.1
 jobs:
  build:
    machine:
-    image: ubuntu-2204:2022.04.2
+    image:  
    steps:
      - checkout
      # start proprietary DB using private Docker image
      # with credentials stored in the UI
      - run: |
          echo "$DOCKER_PASS" | docker login --username gurprit123 --password-stdin
-         docker run -d --name db company/proprietary-db:1.2.3
+         docker run -d --name pydemo ubuntu-2204:2022.04.2
 
      # build the application image
      - run: docker build -t gurprit123/pythonci:v1 .
