@@ -17,8 +17,8 @@ jobs:
          
 
      # build the application image
-     - run: pwd
-     #- run: docker build  -t gurprit123/pythonci:v1 --file ../Dockerfile .
+     #- run: pwd
+     - run: docker build  -t gurprit123/pythonci:v1 --file /home/circleci/project/circleCI/. .
      #- run: docker run -d --name pydemo gurprit123/pythonci:v1
 
      # deploy the image
